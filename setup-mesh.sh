@@ -84,7 +84,7 @@ EOF
     # Apply RBAC resources for accessing secret if they haven't already been applied to this cluster
     local rbac_applied=$(kubectl get rolebindings.rbac.authorization.k8s.io -n $SECRET_NAMESPACE | grep remote-cluster-secret-access | wc -l)
     if [ "$rbac_applied" -eq 0 ]; then
-        kubectl apply -f - <<EOFRBAC
+        kubectl apply -f - <<EOF
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -108,7 +108,7 @@ subjects:
 - kind: ServiceAccount
   name: calico-typha
   namespace: calico-system
-EOFRBAC
+EOF
     fi
 
     # Cleanup
