@@ -34,7 +34,7 @@ cd aws
 #### 3. Customize Terraform Configuration
 Optional: Edit the [terraform.tfvars](aws/terraform.tfvars) file to customize the configuration.
 
-Examine [terraform.tfvars](aws/terraform.tfvars)`.
+Examine [terraform.tfvars](aws/terraform.tfvars).
 
 ```sh
 region1         = "us-east-1"
