@@ -74,8 +74,8 @@ aws eks --region <REGION2> update-kubeconfig --name <CLUSTER_NAME2> --alias <CLU
 #### 6. Verify Calico Installation
 Check the status of Calico in your EKS cluster:
 ```sh
-kubectl --context iad kubectl get tigerastatus
-kubectl --context pdx kubectl get tigerastatus
+kubectl --context iad get tigerastatus
+kubectl --context pdx get tigerastatus
 ```
 
 ## Step 2: Link Your EKS Cluster to Calico Cloud
@@ -88,8 +88,8 @@ Join your EKS cluster to [Calico Cloud](https://www.calicocloud.io/home) as illu
 #### 2. Verify the Cluster Status
 Check the cluster status:
 ```sh
-kubectl --context iad kubectl get tigerastatus
-kubectl --context pdx kubectl get tigerastatus
+kubectl --context iad get tigerastatus
+kubectl --context pdx get tigerastatus
 ```
 
 #### 3. Update the Felix Configuration
