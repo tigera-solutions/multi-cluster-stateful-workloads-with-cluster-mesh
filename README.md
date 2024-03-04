@@ -1,6 +1,7 @@
 # Easily connect stateful workloads across multiple Kubernetes clusters with Calico Cluster Mesh
 
-This example demonstrates how to provision two AWS EKS clusters, each within its own Virtual Private Cloud (VPC), peered together to enable direct network communication between the clusters. The clusters utilize the Calico Container Network Interface (CNI) plugin for network policy enforcement and pod networking, with custom networking configurations to facilitate inter-cluster communication. This setup allows for seamless connectivity between pods across the two peered VPCs, making it ideal for scenarios requiring cross-cluster communication, such as distributed applications or disaster recovery setups. Routing rules are configured to ensure that traffic between the clusters flows through the VPC peering connection, leveraging Calico's network policies for enhanced security and control over inter-cluster traffic.
+This example outlines the setup of two AWS EKS clusters with cross-region connectivity. Each cluster is placed within its own Virtual Private Cloud (VPC), and these VPCs are connected to allow direct network communication between the clusters using VPC peering. The configuration ensures that EKS cluster nodes in one VPC can communicate with cluster nodes in the other VPC. 
+
 
 ## Solution Overview
 
