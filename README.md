@@ -139,6 +139,8 @@ The `setup-mesh.sh` script automates the creation of a Calico cluster mesh as ou
    - Creates a secret that includes the kubeconfig from the source cluster. This enables the destination cluster to securely communicate with the source cluster.
    - Configures a `RemoteClusterConfiguration` resource, which is used to manage the mesh connection settings and policies.
    - Applies specific RBAC roles and role bindings to allow designated components access to the secret, ensuring they can establish and maintain secure cross-cluster communication.
+  
+https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/4e324406-3529-496d-9d2c-a23ee40951d9
 
 ## Validate the Deployment and Review the Results
 
