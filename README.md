@@ -190,6 +190,10 @@ kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx
 
 https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/de99d2fd-eee0-4d21-a4a6-0b22cecb57f2
 
+By accessing the headless service names within each cluster, we can observe how they resolve to endpoint addresses in both the local and the remote clusters. We can confirm that there is service discovery and connectivity across the clusters.
+
+
+
 #### 4. Cleanup
 
 To teardown and remove the resources created in this example:
