@@ -161,7 +161,6 @@ You should see similar messages for each of the clusters in your cluster mesh.
 #### 2. Deploy Statefulsets and Headless Services
 Return to the project root and apply the manifests:
 ```sh
-cd ..
 kubectl --context iad apply -f multi-cluster-rs-iad.yaml
 kubectl --context iad apply -f netshoot.yaml
 kubectl --context pdx apply -f multi-cluster-rs-pdx.yaml
