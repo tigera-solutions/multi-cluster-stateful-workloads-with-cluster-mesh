@@ -87,7 +87,7 @@ kubectl --context pdx get tigerastatus
 #### 1. Join the EKS Cluster to Calico Cloud
 Join your EKS cluster to [Calico Cloud](https://www.calicocloud.io/home) as illustrated:
 
-<INSERT IMAGE>
+https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/cae8ffac-bc65-4b20-88bb-180168fdcacc
 
 #### 2. Verify the Cluster Status
 Check the cluster status:
