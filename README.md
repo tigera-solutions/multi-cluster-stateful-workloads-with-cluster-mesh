@@ -1,8 +1,10 @@
 # Easily connect stateful workloads across multiple Kubernetes clusters with Calico Cluster Mesh
 
-Calico Cluster Mesh extends Kubernetes' inherent capabilities, providing seamless service discovery across multiple Kubernetes clusters. This advanced feature allows Kubernetes services, including headless services, to discover and connect with each other across cluster boundaries without the need for an additional control plane, such as a Service Mesh. 
+Calico Cluster Mesh extends Kubernetes' inherent capabilities, providing seamless service discovery across multiple Kubernetes clusters. This advanced feature allows Kubernetes services, including headless services, to discover and connect with each other across cluster boundaries without the need for an additional control plane, such as a Service Mesh.
 
-This example outlines the setup of two AWS EKS clusters with cross-region connectivity. Each cluster is placed within its own Virtual Private Cloud (VPC), and these VPCs are connected to allow direct network communication between the clusters using VPC peering. The configuration ensures that EKS cluster nodes in one VPC can communicate with cluster nodes in the other VPC. The EKS clusters are configured with Calico Cluster Mesh, enabling direct, low-latency communication between clusters by allowing services in different clusters to discover and connect seamlessly. This setup simplifies cross-cluster interactions and enhances network efficiency without the need for additional networking layers or external routing mechanisms. 
+This example outlines the setup of two AWS EKS clusters with cross-region connectivity. Each cluster is placed within its own Virtual Private Cloud (VPC), and these VPCs are connected to allow direct network communication between the clusters using VPC peering. The configuration ensures that EKS cluster nodes in one VPC can communicate with cluster nodes in the other VPC.
+
+The EKS clusters are configured with Calico Cluster Mesh, enabling direct, low-latency communication between clusters. This allows services in different clusters to discover and connect seamlessly, simplifying cross-cluster interactions and enhancing network efficiency without the need for additional networking layers or external routing mechanisms.
 
 
 ## Solution Overview
