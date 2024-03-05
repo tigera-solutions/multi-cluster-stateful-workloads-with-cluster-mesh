@@ -188,11 +188,13 @@ kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-iad
 kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx
 ```
 
-https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/de99d2fd-eee0-4d21-a4a6-0b22cecb57f2
-
 By accessing the headless service names within each cluster, we can observe how they resolve to endpoint addresses in both the local and the remote clusters. We can confirm that there is service discovery and connectivity across the clusters.
 
+https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/de99d2fd-eee0-4d21-a4a6-0b22cecb57f2
 
+In the Calico Cloud Service Graph, you can observe cross-cluster communication by visualizing the network traffic flows between different clusters.  The Service Graph not only shows the existence of cross-cluster connectivity but also allows you to analyze the efficiency and behavior of the data flows, facilitating a deeper understanding of the network dynamics in a multi-cluster environment.
+
+https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/8cb38fdd-474a-44ee-aab8-396b118f894f
 
 #### 4. Cleanup
 
