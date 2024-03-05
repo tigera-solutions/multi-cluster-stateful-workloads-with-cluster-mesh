@@ -140,7 +140,7 @@ The `setup-mesh.sh` script automates the creation of a Calico cluster mesh as ou
    - Configures a `RemoteClusterConfiguration` resource, which is used to manage the mesh connection settings and policies.
    - Applies specific RBAC roles and role bindings to allow designated components access to the secret, ensuring they can establish and maintain secure cross-cluster communication.
   
-https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/ac46c8d8-85cb-4a47-95e2-9f8b185bd6a0
+https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/8bfa87d9-7a06-4a23-bb25-cb76eee28f0e
 
 ## Validate the Deployment and Review the Results
 
@@ -187,6 +187,8 @@ kubectl --context iad get svc
 kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-iad
 kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx
 ```
+
+https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/de99d2fd-eee0-4d21-a4a6-0b22cecb57f2
 
 #### 4. Cleanup
 
