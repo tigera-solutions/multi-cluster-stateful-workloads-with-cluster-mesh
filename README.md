@@ -1,4 +1,4 @@
-# Easily connect stateful workloads across multiple Kubernetes clusters with Calico Cluster Mesh
+# Optimizing for High Availability and Minimal Latency in Distributed Databases with Kubernetes and Calico Cluster Mesh
 
 Calico Cluster Mesh extends Kubernetes' inherent capabilities, providing seamless service discovery across multiple Kubernetes clusters. This advanced feature allows Kubernetes services, including headless services, to discover and connect with each other across cluster boundaries without the need for an additional control plane, such as a Service Mesh.
 
