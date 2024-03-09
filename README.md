@@ -1,17 +1,17 @@
 # Optimizing for High Availability and Minimal Latency in Distributed Databases with Kubernetes and Calico Cluster Mesh
 
-Calico Cluster Mesh extends Kubernetes' inherent capabilities, providing seamless service discovery across multiple Kubernetes clusters. This advanced feature allows Kubernetes services, including headless services, to discover and connect with each other across cluster boundaries without the need for an additional control plane, such as a Service Mesh.
+Calico Cluster mesh extends Kubernetes' inherent capabilities, providing seamless service discovery across multiple Kubernetes clusters. This advanced feature allows Kubernetes services, including headless services, to discover and connect with each other across cluster boundaries without the need for an additional control plane, such as a Service mesh.
 
 This example outlines the setup of two AWS EKS clusters with cross-region connectivity. Each cluster is placed within its own Virtual Private Cloud (VPC), and these VPCs are connected to allow direct network communication between the clusters using VPC peering. The configuration ensures that EKS cluster nodes in one VPC can communicate with cluster nodes in the other VPC.
 
-The EKS clusters are configured with Calico Cluster Mesh, enabling direct, low-latency communication between clusters. This allows services in different clusters to discover and connect seamlessly, simplifying cross-cluster interactions and enhancing network efficiency without the need for additional networking layers or external routing mechanisms.
+The EKS clusters are configured with Calico Cluster mesh, enabling direct, low-latency communication between clusters. This allows services in different clusters to discover and connect seamlessly, simplifying cross-cluster interactions and enhancing network efficiency without the need for additional networking layers or external routing mechanisms.
 
 
 ## Solution Overview
 
 ## Walk Through
 
-We'll use Terraform, an infrastructure-as-code tool, to deploy this reference architecture automatically. We'll walk you through the deployment process and then demonstrate how to utilize [Calico Cluster Mesh on AWS](https://docs.tigera.io/calico-enterprise/latest/multicluster/federation/overview)
+We'll use Terraform, an infrastructure-as-code tool, to deploy this reference architecture automatically. We'll walk you through the deployment process and then demonstrate how to utilize [Calico Cluster mesh on AWS](https://docs.tigera.io/calico-enterprise/latest/multicluster/federation/overview)
 
 ### Prerequisites:
 
@@ -127,7 +127,7 @@ cd ..
 sh setup-mesh.sh
 ```
 
-The `setup-mesh.sh` script automates the creation of a Calico cluster mesh as outlined in the [Tigera documentation](https://docs.tigera.io/calico-cloud/multicluster/overview), enabling secure and efficient connections between multiple Kubernetes clusters. Below is a breakdown of the specific Kubernetes resources it creates and configures:
+The `setup-mesh.sh` script automates the creation of a Calico Cluster mesh as outlined in the [Tigera documentation](https://docs.tigera.io/calico-cloud/multicluster/overview), enabling secure and efficient connections between multiple Kubernetes clusters. Below is a breakdown of the specific Kubernetes resources it creates and configures:
 
 1. **In the source cluster**, it:
    - Applies Calico federation manifests to install federation roles, rolebindings, and a service account needed for cross-cluster communication.
@@ -156,7 +156,7 @@ kubectl --context pdx logs deployment/calico-typha -n calico-system | grep "Send
 2024-02-27 01:51:03.300 [INFO][13] wrappedcallbacks.go 487: Sending in-sync update for RemoteClusterConfiguration(iad)
 ```
 
-You should see similar messages for each of the clusters in your cluster mesh.
+You should see similar messages for each of the clusters in your Cluster mesh.
 
 #### 2. Deploy Statefulsets and Headless Services
 Return to the project root and apply the manifests:
