@@ -58,6 +58,9 @@ calico_version  = "v3.26.4"
 calico_encap    = "VXLAN"
 ```
 
+> [!NOTE]  
+> Make sure that the ssh_keyname exists for both region1 and region2 in your AWS account.  This terraform assumes they already exist in both regions.
+
 #### 4. Deploy the Infrastructure
 Initialize and apply the Terraform configurations:
 ```sh
