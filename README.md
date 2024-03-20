@@ -33,7 +33,7 @@ git clone https://github.com/tigera-solutions/multi-cluster-stateful-workloads-w
 #### 2. Navigate to the AWS Directory
 Switch to the `aws` subdirectory:
 ```sh
-cd aws
+cd multi-cluster-stateful-workloads-with-cluster-mesh/aws
 ```
 
 #### 3. Customize Terraform Configuration
