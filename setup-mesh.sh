@@ -64,18 +64,18 @@ EOF
     kubectl config use-context "$destination_cluster"
 
     # Create secret in the destination cluster
-    kubectl delete secret $destination_cluster-secret -n $SECRET_NAMESPACE --ignore-not-found=true
-    kubectl create secret generic $destination_cluster-secret -n $SECRET_NAMESPACE --from-literal=datastoreType=kubernetes --from-file=kubeconfig=$kubeconfig
+    kubectl delete secret $source_cluster-secret -n $SECRET_NAMESPACE --ignore-not-found=true
+    kubectl create secret generic $source_cluster-secret -n $SECRET_NAMESPACE --from-literal=datastoreType=kubernetes --from-file=kubeconfig=$kubeconfig
 
     # Apply RemoteClusterConfiguration
     cat <<EOF | kubectl apply -f -
 apiVersion: projectcalico.org/v3
 kind: RemoteClusterConfiguration
 metadata:
-  name: $destination_cluster
+  name: $source_cluster
 spec:
   clusterAccessSecret:
-    name: $destination_cluster-secret
+    name: $source_cluster-secret
     namespace: $SECRET_NAMESPACE
   syncOptions:
     overlayRoutingMode: Enabled
