@@ -107,7 +107,8 @@ kubectl --context iad patch felixconfiguration default --type='merge' -p '{
     "dnsLogsFlushInterval": "15s",
     "l7LogsFlushInterval": "15s",
     "flowLogsFlushInterval": "15s",
-    "flowLogsFileAggregationKindForAllowed": 1
+    "flowLogsFileAggregationKindForAllowed": 1,
+    "flowLogsEnableHostEndpoint": true
   }
 }'
 kubectl --context pdx patch felixconfiguration default --type='merge' -p '{
@@ -115,7 +116,8 @@ kubectl --context pdx patch felixconfiguration default --type='merge' -p '{
     "dnsLogsFlushInterval": "15s",
     "l7LogsFlushInterval": "15s",
     "flowLogsFlushInterval": "15s",
-    "flowLogsFileAggregationKindForAllowed": 1
+    "flowLogsFileAggregationKindForAllowed": 1,
+    "flowLogsEnableHostEndpoint": true
   }
 }'
 ```
