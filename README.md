@@ -92,6 +92,18 @@ Join your EKS cluster to [Calico Cloud](https://www.calicocloud.io/home) as illu
 
 https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/cae8ffac-bc65-4b20-88bb-180168fdcacc
 
+To set your context to a specific cluster use the following commands
+
+```
+kubectl config use-context iad
+```
+
+Do one and then the other. 
+
+```
+kubectl config use-context pdx
+```
+
 #### 2. Verify the Cluster Status
 Check the cluster status:
 ```sh
