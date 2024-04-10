@@ -207,6 +207,15 @@ kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx
 
 By accessing the headless service names within each cluster, we can observe how they resolve to endpoint addresses in both the local and the remote clusters. We can confirm that there is service discovery and connectivity across the clusters.
 
+When we scale the StatefulSet in each cluster, we can see that each replica of the StatefulSet can be directly accessed through a DNS name, following the pattern `${podname}.${federated service name}`.
+
+```sh 
+kubectl --context iad patch sts multi-cluster-rs-iad --patch '{"spec":{"replicas":2}}'
+kubectl --context pdx patch sts multi-cluster-rs-pdx --patch '{"spec":{"replicas":2}}'
+```
+
+
+
 https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/de99d2fd-eee0-4d21-a4a6-0b22cecb57f2
 
 In the Calico Cloud Service Graph, you can observe cross-cluster communication by visualizing the network traffic flows between different clusters.  The Service Graph not only shows the existence of cross-cluster connectivity but also allows you to analyze the efficiency and behavior of the data flows, facilitating a deeper understanding of the network dynamics in a multi-cluster environment.
