@@ -224,7 +224,8 @@ kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx-0.mult
 kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx-1.multi-cluster-rs-pdx
 ```
 
-By directly accessing each StatefulSet pod via its DNS name across clusters, we enable database workloads to allow clients to connect directly to their chosen pod.
+By directly accessing each StatefulSet pod via its DNS name across clusters, we enable database workloads to allow clients to connect directly to their chosen pod, regardless of the cluster in which the pods are running.
+
 
 https://github.com/tigera-solutions/multi-cluster-stateful-workloads-with-cluster-mesh/assets/101850/de99d2fd-eee0-4d21-a4a6-0b22cecb57f2
 
