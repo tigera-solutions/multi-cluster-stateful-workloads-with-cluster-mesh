@@ -207,11 +207,21 @@ kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx
 
 By accessing the headless service names within each cluster, we can observe how they resolve to endpoint addresses in both the local and the remote clusters. We can confirm that there is service discovery and connectivity across the clusters.
 
-When we scale the StatefulSet in each cluster, we can see that each replica of the StatefulSet can be directly accessed through a DNS name, following the pattern `${podname}.${federated service name}`.
-
 ```sh 
 kubectl --context iad patch sts multi-cluster-rs-iad --patch '{"spec":{"replicas":2}}'
 kubectl --context pdx patch sts multi-cluster-rs-pdx --patch '{"spec":{"replicas":2}}'
+```
+
+When we scale the StatefulSet in each cluster, we can see that each replica of the StatefulSet can be directly accessed through a DNS name, following the pattern `${podname}.${federated service name}`.
+
+```
+kubectl --context pdx exec -it netshoot -- ping -c 1 multi-cluster-rs-iad-0.multi-cluster-rs-iad
+kubectl --context pdx exec -it netshoot -- ping -c 1 multi-cluster-rs-iad-1.multi-cluster-rs-iad
+```
+
+```
+kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx-0.multi-cluster-rs-pdx
+kubectl --context iad exec -it netshoot -- ping -c 1 multi-cluster-rs-pdx-1.multi-cluster-rs-pdx
 ```
 
 
